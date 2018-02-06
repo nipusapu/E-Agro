@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.susl.agroapi.model.Category;
 import com.susl.agroapi.model.Product;
+import com.susl.agroapi.repository.CategoryRepository;
 import com.susl.agroapi.repository.ProductRepository;
 
 @RestController
@@ -23,6 +25,8 @@ public class ProductController {
 	
 	@Autowired
     ProductRepository productRepository;
+	
+	CategoryRepository categoryRepository;
 	
 	@GetMapping("/product")
 	public List<Product> getAllNotes() {
@@ -41,6 +45,10 @@ public class ProductController {
 	@PostMapping("/product")
 	public @Valid Product createProduct(@Valid @RequestBody Product product) {
 		System.err.println(product);
+		Category s=categoryRepository.findOneById(Long.parseLong("1"));
+		System.err.println(s);
+//		product.setCategoryId(s);
+		System.err.println(s);
 	    return productRepository.save(product);
 	}
 	
