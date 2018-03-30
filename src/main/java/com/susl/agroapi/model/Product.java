@@ -23,18 +23,18 @@ public class Product {
 	private Long id;
 	
 	@NotNull
-	@Size(min = 5, max = 60)
-	@Column(name = "productName", length = 50, unique = true, nullable = false)
+	//@Size(min = 5, max = 60)
+	@Column(name = "productName", length = 50, unique = false, nullable = false)
 	private String productName;
 	
 	@NotNull
-	@Size(min = 10, max = 200)
-	@Column(name = "description", length = 200, unique = true, nullable = false)
+	//@Size(min = 10, max = 200)
+	@Column(name = "description", length = 200, unique = false, nullable = false)
 	private String description;
 	
 	@NotNull
 	//@Pattern(regexp = "^[0-9]*$")
-	@Column(name = "price", length = 10, unique = true, nullable = false)
+	@Column(name = "price", length = 10, unique = false, nullable = false)
 	private int price;
 	
 	@ManyToOne
