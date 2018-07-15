@@ -3,13 +3,19 @@ package com.susl.agroapi.controller;
 import ai.api.model.AIResponse;
 import ai.api.model.Fulfillment;
 import ai.api.model.ResponseMessage;
+import ai.api.model.AIOutputContext;
+import ai.api.model.
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Kniip on 3/3/2018.
@@ -127,6 +133,49 @@ public class WebhookController {
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
 
+        }
+
+        if(intentName.equals("Location_user")) {
+            String prameter = req.getResult().getStringParameter("location");
+            prameter = prameter.toLowerCase();
+            if (prameter.matches("monaragala.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("You can grow Tomato, Maize, paddy");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("badulla.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("You can grow Potato, tomato, green grams, paddy");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("walimada.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("Red onion, beet-root, carrot, tomato are suitable to grow");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+        }
+        if(intentName.equals("Crop_growing_soil - yes")) {
+           List<AIOutputContext> context = req.getResult().getContexts();
+            for (AIOutputContext item : context){
+                if(item.getName()=="Crop_growing_soil-followup"){
+                    Fulfillment res = new Fulfillment();
+                    res.setSource("webhook");
+                    ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                    mes.setSpeech("Red onion, beet-root, carrot, tomato are suitable to grow");
+                    res.setMessages(mes);
+                    word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+
+                }
+            }
         }
 
 
