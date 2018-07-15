@@ -160,7 +160,7 @@ public class WebhookController {
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
         }
-        if(intentName.equals("Crop_growing_soil - yes")) {
+        if(intentName.equals("Crop_growing_soil-yes")) {
            List<AIOutputContext> context = req.getResult().getContexts();
             for (AIOutputContext item : context){
                 if(item.getName()=="Crop_growing_soil-followup"){
