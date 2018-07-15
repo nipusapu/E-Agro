@@ -24,16 +24,22 @@ public class WebhookController {
 
         Gson jsoner = ai.api.GsonFactory.getDefaultFactory().getGson();
         AIResponse req = jsoner.fromJson(result, AIResponse.class);
-        String test=req.getResult().getResolvedQuery();
 
-        if (test.equals("what is my city?")){
-            Fulfillment res = new Fulfillment();
-            res.setSource("webhook");
-            ResponseMessage.ResponseSpeech mes=new ResponseMessage.ResponseSpeech();
-            mes.setSpeech("beruwala");
-            res.setMessages(mes);
-            word=mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);;
+        String intentName=req.getResult().getMetadata().getIntentName();
+
+        if(intentName.equals("Crop_market")){
+            String prameter=req.getResult().getStringParameter("month");
+            if (prameter.matches("December.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("beruwala");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
         }
+
+
         return word ;
     }
 }
