@@ -39,6 +39,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("it has no specific crop that has more market");
                 res.setMessages(mes);
+                res.setDisplayText("it has no specific crop that has more market");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("february.*")) {
