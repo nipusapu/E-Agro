@@ -29,7 +29,8 @@ public class WebhookController {
 
         if(intentName.equals("Crop_market")){
             String prameter=req.getResult().getStringParameter("month");
-            if (prameter.matches("January.*")) {
+            prameter=prameter.toLowerCase();
+            if (prameter.matches("january.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -37,7 +38,7 @@ public class WebhookController {
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("February.*")) {
+            if (prameter.matches("february.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -45,7 +46,7 @@ public class WebhookController {
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("March.*")) {
+            if (prameter.matches("march.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -53,7 +54,7 @@ public class WebhookController {
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("April.*")) {
+            if (prameter.matches("april.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -61,7 +62,7 @@ public class WebhookController {
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("May.*")) {
+            if (prameter.matches("may.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -69,7 +70,7 @@ public class WebhookController {
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("June.*")) {
+            if (prameter.matches("june.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -77,7 +78,7 @@ public class WebhookController {
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("July.*")) {
+            if (prameter.matches("july.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -85,7 +86,7 @@ public class WebhookController {
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("August.*")) {
+            if (prameter.matches("august.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -93,7 +94,7 @@ public class WebhookController {
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("September.*")) {
+            if (prameter.matches("september.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -101,7 +102,7 @@ public class WebhookController {
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("October.*")) {
+            if (prameter.matches("october.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -109,7 +110,7 @@ public class WebhookController {
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("November.*")) {
+            if (prameter.matches("november.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -117,7 +118,7 @@ public class WebhookController {
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("December.*")) {
+            if (prameter.matches("december.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -125,7 +126,7 @@ public class WebhookController {
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            
+
         }
 
 
