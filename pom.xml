@@ -64,6 +64,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-dialogflow -->
+		<dependency>
+			<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-dialogflow</artifactId>
+			<version>v2-rev2-1.22.0</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/ai.api/libai -->
 		<dependency>
 			<groupId>ai.api</groupId>
