@@ -1,6 +1,5 @@
 package com.susl.agroapi.controller;
 
-import ai.api.model.AIOutputContext;
 import ai.api.model.AIResponse;
 import ai.api.model.Fulfillment;
 import ai.api.model.ResponseMessage;
@@ -11,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * Created by Kniip on 3/3/2018.
@@ -163,18 +160,12 @@ public class WebhookController {
             }
         }
         if(intentName.equals("Crop_growing_soil-yes")) {
-           List<AIOutputContext> context = req.getResult().getContexts();
-            for (AIOutputContext item : context){
-                if(item.getName()=="Crop_growing_soil-followup"){
-                    Fulfillment res = new Fulfillment();
-                    res.setSource("webhook");
-                    ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                    mes.setSpeech("Red onion, beet-root, carrot, tomato are suitable to grow");
-                    res.setMessages(mes);
-                    word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
-
-                }
-            }
+            Fulfillment res = new Fulfillment();
+            res.setSource("webhook");
+            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+            mes.setSpeech("Red onion, beet-root, carrot, tomato are suitable to grow");
+            res.setMessages(mes);
+            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
         }
 
 
