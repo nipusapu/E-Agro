@@ -134,7 +134,7 @@ public class WebhookController {
 
         }
 
-        if(intentName.equals("Location_user")) {
+        if(intentName.equals("Location_user")|| intentName.equals("Crops_type - location")) {
             String prameter = req.getResult().getStringParameter("location");
             prameter = prameter.toLowerCase();
             if (prameter.matches("monaragala.*")) {
@@ -162,6 +162,35 @@ public class WebhookController {
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
         }
+        if(intentName.equals("Crop_growing_soil")) {
+            String prameter = req.getResult().getStringParameter("location");
+            prameter = prameter.toLowerCase();
+            if (prameter.matches("monaragala.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("Soil type is L1. Do you need more details");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("badulla.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("You can grow Potato, tomato, green grams, paddy");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("walimada.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("Red onion, beet-root, carrot, tomato are suitable to grow");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+        }
+
         if(intentName.equals("Crop_growing_soil-yes")) {
             List<AIOutputContext> contexts = req.getResult().getContexts();
             for(AIOutputContext item:contexts){
@@ -169,6 +198,22 @@ public class WebhookController {
                    String location= item.getParameters().get("location").isJsonNull() ? "" : item.getParameters().get("location").getAsString();
                     location=location.toLowerCase();
                     if(location.matches("badulla.*")) {
+                        Fulfillment res = new Fulfillment();
+                        res.setSource("webhook");
+                        ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                        mes.setSpeech("L1 soil type");
+                        res.setMessages(mes);
+                        word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                    }
+                    if(location.matches("monaragala.*")) {
+                        Fulfillment res = new Fulfillment();
+                        res.setSource("webhook");
+                        ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                        mes.setSpeech("L1 soil type");
+                        res.setMessages(mes);
+                        word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                    }
+                    if(location.matches("walimada.*")) {
                         Fulfillment res = new Fulfillment();
                         res.setSource("webhook");
                         ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -319,7 +364,6 @@ public class WebhookController {
 
 
         }
-
 
         return word ;
     }
