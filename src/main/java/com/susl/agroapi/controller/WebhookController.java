@@ -1,5 +1,6 @@
 package com.susl.agroapi.controller;
 
+import ai.api.model.AIOutputContext;
 import ai.api.model.AIResponse;
 import ai.api.model.Fulfillment;
 import ai.api.model.ResponseMessage;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * Created by Kniip on 3/3/2018.
@@ -160,16 +163,19 @@ public class WebhookController {
             }
         }
         if(intentName.equals("Crop_growing_soil-yes")) {
-            String prameter = req.getResult().getStringParameter("location");
-            prameter = prameter.toLowerCase();
-            if (prameter.matches("badulla.*")) {
-                Fulfillment res = new Fulfillment();
-                res.setSource("webhook");
-                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("L1 soil ");
-                res.setMessages(mes);
-                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            List<AIOutputContext> contexts = req.getResult().getContexts();
+            for(AIOutputContext item:contexts){
+                if(item.getName().matches("crop_growing_soil-followup")) {
+                   String speech= item.getParameters().get("parameters").toString();
+                    Fulfillment res = new Fulfillment();
+                    res.setSource("webhook");
+                    ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                    mes.setSpeech(speech);
+                    res.setMessages(mes);
+                    word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                }
             }
+
         }
         if(intentName.equals("Crop_growing_weather")) {
             String prameter = req.getResult().getStringParameter("crop");
@@ -254,20 +260,13 @@ public class WebhookController {
             }
             if (prameter.matches("beet root.*")) {
                 Fulfillment res = new Fulfillment();
-                res.setSource("It nead a wet weather");
+                res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("potato,Tomato has higher market");
+                mes.setSpeech("It nead a wet weather");
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("beet root.*")) {
-                Fulfillment res = new Fulfillment();
-                res.setSource("It nead a wet weather");
-                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("potato,Tomato has higher market");
-                res.setMessages(mes);
-                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
-            }
+
         }
 
         if(intentName.equals("Time_crop_grow")) {
