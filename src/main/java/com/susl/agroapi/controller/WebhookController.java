@@ -169,7 +169,7 @@ public class WebhookController {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("Soil type is L1. Do you need more details");
+                mes.setSpeech("this area contain soil that contain L1 moisture. Do you need more details?");
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
@@ -177,7 +177,7 @@ public class WebhookController {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("You can grow Potato, tomato, green grams, paddy");
+                mes.setSpeech("this area contain soil that containL1 moisture and L3 Moisture.Do you need more details?");
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
@@ -185,7 +185,7 @@ public class WebhookController {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("Red onion, beet-root, carrot, tomato are suitable to grow");
+                mes.setSpeech("this area contain soil that contain L2 Moisture.Do you need more details?");
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
