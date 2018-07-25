@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * Created by Kniip on 3/3/2018.
  */
@@ -161,16 +163,18 @@ public class WebhookController {
             }
         }
         if(intentName.equals("Crop_growing_soil-yes")) {
-            AIOutputContext context = req.getResult().getContext("crop_growing_soil-followup");
-                   String speech= context.getParameters().get("parameters").toString();
+            List<AIOutputContext> contexts = req.getResult().getContexts();
+            for(AIOutputContext item:contexts){
+                if(item.getName().matches("crop_growing_soil-followup")) {
+                   String speech= item.getParameters().get("location").isJsonNull() ? "" : item.getParameters().get("location").getAsString();
                     Fulfillment res = new Fulfillment();
                     res.setSource("webhook");
                     ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                    mes.setSpeech("speech");
+                    mes.setSpeech(speech);
                     res.setMessages(mes);
                     word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
-
-
+                }
+            }
 
         }
         if(intentName.equals("Crop_growing_weather")) {
