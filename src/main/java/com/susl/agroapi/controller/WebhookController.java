@@ -134,7 +134,7 @@ public class WebhookController {
 
         }
 
-        if(intentName.equals("Location_user")|| intentName.equals("Crops_type - location")) {
+        if(intentName.equals("Location_user")) {
             String prameter = req.getResult().getStringParameter("location");
             prameter = prameter.toLowerCase();
             if (prameter.matches("monaragala.*")) {
@@ -364,6 +364,100 @@ public class WebhookController {
 
 
         }
+        if(intentName.equals("Crops_type - location")) {
+            String prameter = req.getResult().getStringParameter("location");
+            prameter = prameter.toLowerCase();
+            List<AIOutputContext> contexts = req.getResult().getContexts();
+            for(AIOutputContext item:contexts){
+                if(item.getName().matches("crop_growing_soil-followup")) {
+                    String crop= item.getParameters().get("crop").isJsonNull() ? "" : item.getParameters().get("location").getAsString();
+                    crop=crop.toLowerCase();
+                    if (prameter.matches("badulla.*")) {
+
+                        if (crop.matches("paddy.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("L1 soil type");
+                            res.setMessages(mes);
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
+                        if (crop.matches("vegitable.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("L1 soil type");
+                            res.setMessages(mes);
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
+                        if (crop.matches("cereal.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("L1 soil type");
+                            res.setMessages(mes);
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
+                    }
+                    if (prameter.matches("monaragala.*")) {
+
+                        if (crop.matches("paddy.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("L1 soil type");
+                            res.setMessages(mes);
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
+                        if (crop.matches("vegitable.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("L1 soil type");
+                            res.setMessages(mes);
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
+                        if (crop.matches("cereal.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("L1 soil type");
+                            res.setMessages(mes);
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
+                    }
+                    if (prameter.matches("walimada.*")) {
+
+                        if (crop.matches("paddy.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("L1 soil type");
+                            res.setMessages(mes);
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
+                        if (crop.matches("vegitable.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("L1 soil type");
+                            res.setMessages(mes);
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
+                        if (crop.matches("cereal.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("L1 soil type");
+                            res.setMessages(mes);
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
+                    }
+                }
+            }
+
+        }
+
 
         return word ;
     }
