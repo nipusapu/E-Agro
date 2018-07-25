@@ -168,13 +168,14 @@ public class WebhookController {
                 if(item.getName().matches("crop_growing_soil-followup")) {
                    String location= item.getParameters().get("location").isJsonNull() ? "" : item.getParameters().get("location").getAsString();
                     location=location.toLowerCase();
-                    if(location.matches("badulla.*")){
-                    Fulfillment res = new Fulfillment();
-                    res.setSource("webhook");
-                    ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                    mes.setSpeech("L1 soil type");
-                    res.setMessages(mes);
-                    word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                    if(location.matches("badulla.*")) {
+                        Fulfillment res = new Fulfillment();
+                        res.setSource("webhook");
+                        ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                        mes.setSpeech("L1 soil type");
+                        res.setMessages(mes);
+                        word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                    }
                 }
             }
 
