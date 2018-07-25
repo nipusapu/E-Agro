@@ -160,12 +160,162 @@ public class WebhookController {
             }
         }
         if(intentName.equals("Crop_growing_soil-yes")) {
-            Fulfillment res = new Fulfillment();
-            res.setSource("webhook");
-            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-            mes.setSpeech("Red onion, beet-root, carrot, tomato are suitable to grow");
-            res.setMessages(mes);
-            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            String prameter = req.getResult().getStringParameter("location");
+            prameter = prameter.toLowerCase();
+            if (prameter.matches("badulla.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("L1 soil ");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+        }
+        if(intentName.equals("Crop_growing_weather")) {
+            String prameter = req.getResult().getStringParameter("crop");
+            prameter = prameter.toLowerCase();
+            if (prameter.matches("tomato.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("It need more wet weather");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("potato.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("it need more sunny weather");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("green grams.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("It need a dry weather");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("paddy.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("It need a wet weather");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("beet root.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("It nead a wet weather");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("It need a wet weather");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+
+        }
+        if(intentName.equals("Crops_growing_areas")) {
+            String prameter = req.getResult().getStringParameter("crop");
+            prameter = prameter.toLowerCase();
+
+            if (prameter.matches("tomato.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("It need more wet weather");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("potato.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("it need more sunny weather");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("green grams.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("It need a dry weather");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("paddy.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("It need a wet weather");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("beet root.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("It nead a wet weather");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("potato,Tomato has higher market");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("beet root.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("It nead a wet weather");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("potato,Tomato has higher market");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+        }
+
+        if(intentName.equals("Time_crop_grow")) {
+            String prameter = req.getResult().getStringParameter("crop");
+            prameter = prameter.toLowerCase();
+
+            if (prameter.matches("tomato.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("January to April & October to november is good");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("potato.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("March to June is good");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("green grams.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("December to April is good");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("paddy.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("January to April & June to October is good");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("beet root.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("It nead a wet weather");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("February to April is good");
+                res.setMessages(mes);
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+
+
         }
 
 
