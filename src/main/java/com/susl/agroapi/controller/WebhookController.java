@@ -48,6 +48,7 @@ public class WebhookController {
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("it has no specific crop that has more market");
+                res.setSpeech("it has no specific crop that has more market");
                 res.setMessages(mes);
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
@@ -57,6 +58,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("it has no specific crop that has more market");
                 res.setMessages(mes);
+                res.setSpeech("it has no specific crop that has more market");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("april.*")) {
@@ -65,6 +67,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("Green grams has higher market");
                 res.setMessages(mes);
+                res.setSpeech("Green grams has higher market");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("may.*")) {
@@ -73,6 +76,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("Green grams has higher market");
                 res.setMessages(mes);
+                res.setSpeech("Green grams has higher market");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("june.*")) {
@@ -81,6 +85,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("Green grams, Potato, tomato has higher market");
                 res.setMessages(mes);
+                res.setSpeech("Green grams, Potato, tomato has higher market");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("july.*")) {
@@ -89,6 +94,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("Green grams, Potato, tomato has higher market");
                 res.setMessages(mes);
+                res.setSpeech("Green grams, Potato, tomato has higher market");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("august.*")) {
@@ -97,6 +103,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("potato has higher market");
                 res.setMessages(mes);
+                res.setSpeech("potato has higher market");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("september.*")) {
@@ -105,6 +112,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("it has no specific crop that has more market");
                 res.setMessages(mes);
+                res.setSpeech("it has no specific crop that has more market");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("october.*")) {
@@ -113,6 +121,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("it has no specific crop that has more market");
                 res.setMessages(mes);
+                res.setSpeech("it has no specific crop that has more market");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("november.*")) {
@@ -121,6 +130,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("potato,Tomato has higher market");
                 res.setMessages(mes);
+                res.setSpeech("potato,Tomato has higher market");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("december.*")) {
@@ -129,6 +139,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("potato,Tomato has higher market");
                 res.setMessages(mes);
+                res.setSpeech("potato,Tomato has higher market");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
 
@@ -143,6 +154,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("You can grow Tomato, Maize, paddy");
                 res.setMessages(mes);
+                res.setSpeech("You can grow Tomato, Maize, paddy");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("badulla.*")) {
@@ -151,6 +163,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("You can grow Potato, tomato, green grams, paddy");
                 res.setMessages(mes);
+                res.setSpeech("You can grow Potato, tomato, green grams, paddy");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("walimada.*")) {
@@ -159,6 +172,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("Red onion, beet-root, carrot, tomato are suitable to grow");
                 res.setMessages(mes);
+                res.setSpeech("Red onion, beet-root, carrot, tomato are suitable to grow");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
         }
@@ -171,6 +185,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("this area contain soil that contain L1 moisture. Do you need more details?");
                 res.setMessages(mes);
+                res.setSpeech("this area contain soil that contain L1 moisture. Do you need more details?");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("badulla.*")) {
@@ -179,6 +194,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("this area contain soil that containL1 moisture and L3 Moisture.Do you need more details?");
                 res.setMessages(mes);
+                res.setSpeech("this area contain soil that containL1 moisture and L3 Moisture.Do you need more details?");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("walimada.*")) {
@@ -187,6 +203,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("this area contain soil that contain L2 Moisture.Do you need more details?");
                 res.setMessages(mes);
+                res.setSpeech("this area contain soil that contain L2 Moisture.Do you need more details?");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
         }
@@ -203,6 +220,7 @@ public class WebhookController {
                         ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                         mes.setSpeech("You can grow Potato, tomato, green grams, paddy");
                         res.setMessages(mes);
+                        res.setSpeech("You can grow Potato, tomato, green grams, paddy");
                         word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                     }
                     if(location.matches("monaragala.*")) {
@@ -211,6 +229,7 @@ public class WebhookController {
                         ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                         mes.setSpeech("You can grow Tomato, Maize, paddy");
                         res.setMessages(mes);
+                        res.setSpeech("You can grow Tomato, Maize, paddy");
                         word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                     }
                     if(location.matches("walimada.*")) {
@@ -219,6 +238,7 @@ public class WebhookController {
                         ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                         mes.setSpeech("Red onion, beet-root, carrot, tomato are suitable to grow");
                         res.setMessages(mes);
+                        res.setSpeech("Red onion, beet-root, carrot, tomato are suitable to grow");
                         word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                     }
                 }
@@ -234,6 +254,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("It need more wet weather");
                 res.setMessages(mes);
+                res.setSpeech("It need more wet weather");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("potato.*")) {
@@ -242,6 +263,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("it need more sunny weather");
                 res.setMessages(mes);
+                res.setSpeech("it need more sunny weather");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("green grams.*")) {
@@ -250,6 +272,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("It need a dry weather");
                 res.setMessages(mes);
+                res.setSpeech("It need a dry weather");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("paddy.*")) {
@@ -258,6 +281,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("It need a wet weather");
                 res.setMessages(mes);
+                res.setSpeech("It need a wet weather");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("beet root.*")) {
@@ -280,6 +304,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("It need more wet weather");
                 res.setMessages(mes);
+                res.setSpeech("It need more wet weather");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("potato.*")) {
@@ -288,6 +313,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("it need more sunny weather");
                 res.setMessages(mes);
+                res.setSpeech("it need more sunny weather");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("green grams.*")) {
@@ -296,6 +322,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("It need a dry weather");
                 res.setMessages(mes);
+                res.setSpeech("It need a dry weather");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("paddy.*")) {
@@ -304,6 +331,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("It need a wet weather");
                 res.setMessages(mes);
+                res.setSpeech("It need a wet weather");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("beet root.*")) {
@@ -312,6 +340,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("It nead a wet weather");
                 res.setMessages(mes);
+                res.setSpeech("It nead a wet weather");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
 
@@ -327,6 +356,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("January to April & October to november is good");
                 res.setMessages(mes);
+                res.setSpeech("January to April & October to november is good");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("potato.*")) {
@@ -335,6 +365,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("March to June is good");
                 res.setMessages(mes);
+                res.setSpeech("March to June is good");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("green grams.*")) {
@@ -343,6 +374,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("December to April is good");
                 res.setMessages(mes);
+                res.setSpeech("December to April is good");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("paddy.*")) {
@@ -351,6 +383,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("January to April & June to October is good");
                 res.setMessages(mes);
+                res.setSpeech("January to April & June to October is good");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("beet root.*")) {
@@ -359,6 +392,7 @@ public class WebhookController {
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("February to April is good");
                 res.setMessages(mes);
+                res.setSpeech("February to April is good");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
 
@@ -380,6 +414,7 @@ public class WebhookController {
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                             mes.setSpeech("Sudu Samba, Rathu samba can be grown");
                             res.setMessages(mes);
+                            res.setSpeech("Sudu Samba, Rathu samba can be grown");
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
                         if (crop.matches("vegitable.*")) {
@@ -388,6 +423,7 @@ public class WebhookController {
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                             mes.setSpeech("Tomato, potato, beet root can be grown");
                             res.setMessages(mes);
+                            res.setSpeech("Tomato, potato, beet root can be grown");
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
                         if (crop.matches("cereal.*")) {
@@ -396,6 +432,7 @@ public class WebhookController {
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                             mes.setSpeech("Green grams can be grown");
                             res.setMessages(mes);
+                            res.setSpeech("Green grams can be grown");
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
                     }
@@ -407,14 +444,16 @@ public class WebhookController {
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                             mes.setSpeech("Rathu kekulu, Ma wee,Sudu Samba can be grown");
                             res.setMessages(mes);
+                            res.setSpeech("Rathu kekulu, Ma wee,Sudu Samba can be grown");
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
                         if (crop.matches("vegitable.*")) {
                             Fulfillment res = new Fulfillment();
                             res.setSource("webhook");
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                            mes.setSpeech("Red onion can be grown ");
+                            mes.setSpeech("Red onion can be grown");
                             res.setMessages(mes);
+                            res.setSpeech("Red onion can be grown");
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
                         if (crop.matches("cereal.*")) {
@@ -423,6 +462,7 @@ public class WebhookController {
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                             mes.setSpeech("Maize can be grown");
                             res.setMessages(mes);
+                            res.setSpeech("Maize can be grown");
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
                     }
@@ -434,6 +474,7 @@ public class WebhookController {
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                             mes.setSpeech("L1 soil type");
                             res.setMessages(mes);
+                            res.setSpeech("Sudu samba can be grown");
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
                         if (crop.matches("vegitable.*")) {
@@ -442,6 +483,7 @@ public class WebhookController {
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                             mes.setSpeech("Tomato, potato, beet root can be grown");
                             res.setMessages(mes);
+                            res.setSpeech("Tomato, potato, beet root can be grown");
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
                         if (crop.matches("cereal.*")) {
@@ -450,6 +492,7 @@ public class WebhookController {
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                             mes.setSpeech("Green grams can be grown");
                             res.setMessages(mes);
+                            res.setSpeech("Green grams can be grown");
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
                     }
