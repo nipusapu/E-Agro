@@ -416,7 +416,7 @@ public class WebhookController {
 
 
         }
-        if(intentName.equals("Crops_type - location")) {
+        if(intentName.equals("Crops_type-location")) {
             String prameter = req.getResult().getStringParameter("location");
             prameter = prameter.toLowerCase();
             List<AIOutputContext> contexts = req.getResult().getContexts();
@@ -445,6 +445,24 @@ public class WebhookController {
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
                         if (crop.matches("cereal.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("Green grams can be grown");
+                            res.setMessages(mes);
+                            res.setSpeech("Green grams can be grown");
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
+                        if (crop.matches("vegitables.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("Tomato, potato, beet root can be grown");
+                            res.setMessages(mes);
+                            res.setSpeech("Tomato, potato, beet root can be grown");
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
+                        if (crop.matches("cereals.*")) {
                             Fulfillment res = new Fulfillment();
                             res.setSource("webhook");
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -483,6 +501,24 @@ public class WebhookController {
                             res.setSpeech("Maize can be grown");
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
+                        if (crop.matches("vegitables.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("Red onion can be grown");
+                            res.setMessages(mes);
+                            res.setSpeech("Red onion can be grown");
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
+                        if (crop.matches("cereals.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("Maize can be grown");
+                            res.setMessages(mes);
+                            res.setSpeech("Maize can be grown");
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
                     }
                     if (prameter.matches("walimada.*")) {
 
@@ -505,6 +541,24 @@ public class WebhookController {
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
                         if (crop.matches("cereal.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("Green grams can be grown");
+                            res.setMessages(mes);
+                            res.setSpeech("Green grams can be grown");
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
+                        if (crop.matches("vegitables.*")) {
+                            Fulfillment res = new Fulfillment();
+                            res.setSource("webhook");
+                            ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                            mes.setSpeech("Tomato, potato, beet root can be grown");
+                            res.setMessages(mes);
+                            res.setSpeech("Tomato, potato, beet root can be grown");
+                            word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+                        }
+                        if (crop.matches("cereals.*")) {
                             Fulfillment res = new Fulfillment();
                             res.setSource("webhook");
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
