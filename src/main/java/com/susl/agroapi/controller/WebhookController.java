@@ -425,12 +425,12 @@ public class WebhookController {
 
 
         }
-        if(intentName.equals("crops_type-followup")) {
+        if(intentName.equals("Crops_type-location")) {
             String prameter = req.getResult().getStringParameter("location");
             prameter = prameter.toLowerCase();
             List<AIOutputContext> contexts = req.getResult().getContexts();
             for(AIOutputContext item:contexts){
-                if(item.getName().matches("crop_growing_soil-followup")) {
+                if(item.getName().matches("crops_type-followup")) {
                     String crop= item.getParameters().get("crop.original").isJsonNull() ? "" : item.getParameters().get("crop.original").getAsString();
                     crop=crop.toLowerCase();
                     if (prameter.matches("badulla.*")) {
