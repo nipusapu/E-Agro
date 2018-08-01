@@ -148,7 +148,7 @@ public class WebhookController {
         if(intentName.equals("Location_user")) {
             String prameter = req.getResult().getStringParameter("location");
             prameter = prameter.toLowerCase();
-            if (prameter.matches("moneragala.*")) {
+            if (prameter.matches("monaragala.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -166,7 +166,7 @@ public class WebhookController {
                 res.setSpeech("You can grow Potato, tomato, green grams, paddy");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("welimada.*")) {
+            if (prameter.matches("walimada.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -179,7 +179,7 @@ public class WebhookController {
         if(intentName.equals("Crop_growing_soil")) {
             String prameter = req.getResult().getStringParameter("location");
             prameter = prameter.toLowerCase();
-            if (prameter.matches("moneragala.*")) {
+            if (prameter.matches("monaragala.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -197,7 +197,7 @@ public class WebhookController {
                 res.setSpeech("this area contain soil that containL1 moisture and L3 Moisture.Do you need more details?");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("welimada.*")) {
+            if (prameter.matches("walimada.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -212,7 +212,7 @@ public class WebhookController {
             List<AIOutputContext> contexts = req.getResult().getContexts();
             for(AIOutputContext item:contexts){
                 if(item.getName().matches("crop_growing_soil-followup")) {
-                   String location= item.getParameters().get("location.original").isJsonNull() ? "" : item.getParameters().get("location.original").getAsString();
+                   String location= item.getParameters().get("location").isJsonNull() ? "" : item.getParameters().get("location").getAsString();
                     location=location.toLowerCase();
                     if(location.matches("badulla.*")) {
                         Fulfillment res = new Fulfillment();
@@ -223,7 +223,7 @@ public class WebhookController {
                         res.setSpeech("You can grow Potato, tomato, green grams, paddy");
                         word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                     }
-                    if(location.matches("moneragala.*")) {
+                    if(location.matches("monaragala.*")) {
                         Fulfillment res = new Fulfillment();
                         res.setSource("webhook");
                         ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -232,7 +232,7 @@ public class WebhookController {
                         res.setSpeech("You can grow Tomato, Maize, paddy");
                         word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                     }
-                    if(location.matches("welimada.*")) {
+                    if(location.matches("walimada.*")) {
                         Fulfillment res = new Fulfillment();
                         res.setSource("webhook");
                         ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -266,24 +266,6 @@ public class WebhookController {
                 res.setSpeech("it need more sunny weather");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("tomatoes.*")) {
-                Fulfillment res = new Fulfillment();
-                res.setSource("webhook");
-                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("It need more wet weather");
-                res.setMessages(mes);
-                res.setSpeech("It need more wet weather");
-                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
-            }
-            if (prameter.matches("potatoes.*")) {
-                Fulfillment res = new Fulfillment();
-                res.setSource("webhook");
-                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("it need more sunny weather");
-                res.setMessages(mes);
-                res.setSpeech("it need more sunny weather");
-                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
-            }
             if (prameter.matches("green grams.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
@@ -302,7 +284,7 @@ public class WebhookController {
                 res.setSpeech("It need a wet weather");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("beetroot.*")) {
+            if (prameter.matches("beet root.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("It nead a wet weather");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -404,24 +386,6 @@ public class WebhookController {
                 res.setSpeech("March to June is good");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("tomatoes.*")) {
-                Fulfillment res = new Fulfillment();
-                res.setSource("webhook");
-                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("January to April & October to november is good");
-                res.setMessages(mes);
-                res.setSpeech("January to April & October to november is good");
-                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
-            }
-            if (prameter.matches("potatoes.*")) {
-                Fulfillment res = new Fulfillment();
-                res.setSource("webhook");
-                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("March to June is good");
-                res.setMessages(mes);
-                res.setSpeech("March to June is good");
-                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
-            }
             if (prameter.matches("green grams.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
@@ -440,9 +404,9 @@ public class WebhookController {
                 res.setSpeech("January to April & June to October is good");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("beetroot.*")) {
+            if (prameter.matches("beet root.*")) {
                 Fulfillment res = new Fulfillment();
-                res.setSource("webhook");
+                res.setSource("It nead a wet weather");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("February to April is good");
                 res.setMessages(mes);
@@ -490,7 +454,7 @@ public class WebhookController {
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
                     }
-                    if (prameter.matches("moneragala.*")) {
+                    if (prameter.matches("monaragala.*")) {
 
                         if (crop.matches("paddy.*")) {
                             Fulfillment res = new Fulfillment();
@@ -520,7 +484,7 @@ public class WebhookController {
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
                     }
-                    if (prameter.matches("welimada.*")) {
+                    if (prameter.matches("walimada.*")) {
 
                         if (crop.matches("paddy.*")) {
                             Fulfillment res = new Fulfillment();
