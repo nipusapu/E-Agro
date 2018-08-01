@@ -404,7 +404,7 @@ public class WebhookController {
             List<AIOutputContext> contexts = req.getResult().getContexts();
             for(AIOutputContext item:contexts){
                 if(item.getName().matches("crop_growing_soil-followup")) {
-                    String crop= item.getParameters().get("crop").isJsonNull() ? "" : item.getParameters().get("location").getAsString();
+                    String crop= item.getParameters().get("crop").isJsonNull() ? "" : item.getParameters().get("crop").getAsString();
                     crop=crop.toLowerCase();
                     if (prameter.matches("badulla.*")) {
 
