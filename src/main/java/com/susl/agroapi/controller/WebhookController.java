@@ -284,7 +284,7 @@ public class WebhookController {
                 res.setSpeech("It need a wet weather");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("beet root.*")) {
+            if (prameter.matches("beetroot.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("It nead a wet weather");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -404,9 +404,18 @@ public class WebhookController {
                 res.setSpeech("January to April & June to October is good");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
-            if (prameter.matches("beet root.*")) {
+            if (prameter.matches("beetroot.*")) {
                 Fulfillment res = new Fulfillment();
-                res.setSource("It nead a wet weather");
+                res.setSource("webhook");
+                ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
+                mes.setSpeech("February to April is good");
+                res.setMessages(mes);
+                res.setSpeech("February to April is good");
+                word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+            }
+            if (prameter.matches("red onion.*")) {
+                Fulfillment res = new Fulfillment();
+                res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
                 mes.setSpeech("February to April is good");
                 res.setMessages(mes);
@@ -416,7 +425,7 @@ public class WebhookController {
 
 
         }
-        if(intentName.equals("Crops_type-location")) {
+        if(intentName.equals("crops_type-followup")) {
             String prameter = req.getResult().getStringParameter("location");
             prameter = prameter.toLowerCase();
             List<AIOutputContext> contexts = req.getResult().getContexts();
@@ -453,7 +462,7 @@ public class WebhookController {
                             res.setSpeech("Green grams can be grown");
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
-                        if (crop.matches("vegitables.*")) {
+                        if (crop.matches("vegetables.*")) {
                             Fulfillment res = new Fulfillment();
                             res.setSource("webhook");
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -483,7 +492,7 @@ public class WebhookController {
                             res.setSpeech("Rathu kekulu, Ma wee,Sudu Samba can be grown");
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
-                        if (crop.matches("vegitable.*")) {
+                        if (crop.matches("vegetable.*")) {
                             Fulfillment res = new Fulfillment();
                             res.setSource("webhook");
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -501,7 +510,7 @@ public class WebhookController {
                             res.setSpeech("Maize can be grown");
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
-                        if (crop.matches("vegitables.*")) {
+                        if (crop.matches("vegetables.*")) {
                             Fulfillment res = new Fulfillment();
                             res.setSource("webhook");
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
@@ -549,7 +558,7 @@ public class WebhookController {
                             res.setSpeech("Green grams can be grown");
                             word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
                         }
-                        if (crop.matches("vegitables.*")) {
+                        if (crop.matches("vegetables.*")) {
                             Fulfillment res = new Fulfillment();
                             res.setSource("webhook");
                             ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
