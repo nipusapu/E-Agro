@@ -302,25 +302,25 @@ public class WebhookController {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("It need more wet weather");
+                mes.setSpeech("Welimada, Badulla are good");
                 res.setMessages(mes);
-                res.setSpeech("It need more wet weather");
+                res.setSpeech("Welimada, Badulla are good");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("potato.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("it need more sunny weather");
+                mes.setSpeech("Moneragala,welimada are good");
                 res.setMessages(mes);
-                res.setSpeech("it need more sunny weather");
+                res.setSpeech("Moneragala,welimada are good");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("green grams.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("It need a dry weather");
+                mes.setSpeech("Moneragala is good");
                 res.setMessages(mes);
                 res.setSpeech("It need a dry weather");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
@@ -329,18 +329,18 @@ public class WebhookController {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("It need a wet weather");
+                mes.setSpeech("Welimada,moneragala are good");
                 res.setMessages(mes);
-                res.setSpeech("It need a wet weather");
+                res.setSpeech("Welimada,moneragala are good");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
             if (prameter.matches("beet root.*")) {
                 Fulfillment res = new Fulfillment();
                 res.setSource("webhook");
                 ResponseMessage.ResponseSpeech mes = new ResponseMessage.ResponseSpeech();
-                mes.setSpeech("It nead a wet weather");
+                mes.setSpeech("Welmada, Badulla are good");
                 res.setMessages(mes);
-                res.setSpeech("It nead a wet weather");
+                res.setSpeech("Welmada, Badulla are good");
                 word = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
             }
 
